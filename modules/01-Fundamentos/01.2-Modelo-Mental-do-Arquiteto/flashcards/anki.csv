@@ -1,0 +1,9 @@
+﻿Frente;Verso
+O que Ã© um ativo?;Qualquer elemento que possua valor para a organizaÃ§Ã£o.
+O que Ã© uma ameaÃ§a?;Evento, agente ou condiÃ§Ã£o com potencial de causar dano a um ativo.
+O que Ã© uma vulnerabilidade?;Fraqueza que pode ser explorada por uma ameaÃ§a.
+O que Ã© risco?;Possibilidade de uma ameaÃ§a explorar uma vulnerabilidade e causar impacto.
+Qual Ã© a sequÃªncia do modelo mental do arquiteto?;Ativo, ameaÃ§a, vulnerabilidade, risco, impacto e controle.
+Por que correlacionar os elementos?;Para demonstrar causa, efeito, prioridade e justificativa arquitetural.
+Qual Ã© o objetivo de Defense in Depth?;Combinar mÃºltiplas camadas para evitar falha total de proteÃ§Ã£o.
+Qual pergunta inicia uma anÃ¡lise arquitetural?;Qual problema de negÃ³cio e qual risco estamos tentando reduzir?

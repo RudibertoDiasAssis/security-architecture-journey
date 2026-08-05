@@ -1,32 +1,35 @@
 ﻿# 01.2 â€” Modelo Mental do Arquiteto de SeguranÃ§a
 
-> **Status:** âœ… ConteÃºdo inicial concluÃ­do  
+> **Status:** ConcluÃ­do  
 > **DomÃ­nio:** Fundamentos  
-> **NÃ­vel:** Foundation
+> **NÃ­vel:** Foundation  
+> **Tempo estimado:** 4 horas
 
-## Objetivo do mÃ³dulo
+## Objetivo
 
-Desenvolver a capacidade de correlacionar ativos, ameaÃ§as, vulnerabilidades, riscos, impactos e controles arquiteturais.
+Desenvolver o raciocÃ­nio necessÃ¡rio para correlacionar ativos, ameaÃ§as, vulnerabilidades, riscos, impactos e controles antes de selecionar tecnologias.
 
-## Conceitos fundamentais
+## Ordem de estudo
 
-### Ativo
+1. [Conceitos fundamentais](01-Conceitos.md)
+2. [Ativos](02-Ativos.md)
+3. [AmeaÃ§as](03-Ameacas.md)
+4. [Vulnerabilidades](04-Vulnerabilidades.md)
+5. [Riscos e impactos](05-Riscos-e-Impactos.md)
+6. [Controles de seguranÃ§a](06-Controles.md)
+7. [Fluxo arquitetural](07-Fluxo-Arquitetural.md)
+8. [Como um arquiteto pensa](08-Como-um-Arquiteto-Pensa.md)
+9. [ExercÃ­cio prÃ¡tico resolvido](09-Exercicio-Pratico.md)
+10. [Resumo executivo](10-Resumo-Executivo.md)
 
-Qualquer elemento que possua valor para a organizaÃ§Ã£o.
+## Artefatos do mÃ³dulo
 
-### AmeaÃ§a
+- [Architecture Canvas](architecture-canvas.md)
+- [ADR â€” ProteÃ§Ã£o de identidades em camadas](adr/ADR-0001-Protecao-de-Identidades-em-Camadas.md)
+- [Diagrama do modelo mental](diagramas/01-Fluxo-Modelo-Mental.md)
+- [Flashcards para Anki](flashcards/anki.csv)
 
-Evento, agente ou condiÃ§Ã£o com potencial de causar dano a um ativo.
-
-### Vulnerabilidade
-
-Fraqueza que pode ser explorada por uma ameaÃ§a.
-
-### Risco
-
-Possibilidade de uma ameaÃ§a explorar uma vulnerabilidade e causar impacto.
-
-## Fluxo mental
+## Modelo central
 
 ```mermaid
 flowchart LR
@@ -37,77 +40,6 @@ flowchart LR
     E --> F[Controle]
 ```
 
-## ExercÃ­cio prÃ¡tico revisado
+## PrÃ³ximo mÃ³dulo
 
-### Ativos identificados
-
-**Pessoas**
-- FuncionÃ¡rios
-- Terceiros
-- Parceiros
-- Desenvolvedores
-- Equipe Financeira
-- Administradores
-
-**Dados**
-- Dados de clientes
-- Dados financeiros
-- Propriedade intelectual
-- Credenciais
-- Logs
-- Dados da folha de pagamento
-
-**Sistemas e serviÃ§os**
-- Microsoft 365
-- ERP
-- Sistema financeiro
-- VPN
-- Active Directory
-- Banco de Dados
-
-**Infraestrutura**
-- AWS
-- Rede corporativa
-- Servidores
-- Firewalls
-- DNS
-- Endpoints
-
-**Processos**
-- Folha de pagamento
-- Compras
-- ProduÃ§Ã£o
-- Desenvolvimento de software
-- Atendimento ao cliente
-
-## Matriz de correlaÃ§Ã£o arquitetural
-
-| Ativo | AmeaÃ§as | Vulnerabilidades | Risco | Impactos para o negÃ³cio | Controles arquiteturais |
-|---|---|---|---|---|---|
-| FuncionÃ¡rios | Phishing; engenharia social | Baixa conscientizaÃ§Ã£o; reutilizaÃ§Ã£o de senhas | Comprometimento da identidade | Fraude, vazamento e perda de produtividade | Treinamento, MFA resistente a phishing, Conditional Access e EDR |
-| VPN | Credential stuffing; credenciais roubadas | AusÃªncia de MFA; software desatualizado | Acesso remoto nÃ£o autorizado | Movimento lateral e exposiÃ§Ã£o de dados | MFA, Device Trust, ZTNA, segmentaÃ§Ã£o e SIEM |
-| Banco de Dados | Ransomware; insider | Contas compartilhadas; patches atrasados | ExfiltraÃ§Ã£o, alteraÃ§Ã£o ou criptografia | ParalisaÃ§Ã£o, LGPD e prejuÃ­zo financeiro | PAM, criptografia, auditoria, backup imutÃ¡vel e segmentaÃ§Ã£o |
-| Folha de Pagamento | Fraude interna; conta comprometida | Excesso de privilÃ©gios; ausÃªncia de SoD | AlteraÃ§Ã£o indevida de pagamentos | Perda financeira e dano reputacional | IGA, SoD, mÃºltipla aprovaÃ§Ã£o, MFA e revisÃ£o de acessos |
-| Credenciais | InfoStealer; phishing/AiTM | Senhas fracas; MFA nÃ£o resistente a phishing | Sequestro de conta ou sessÃ£o | Acesso indevido a M365, ERP e VPN | FIDO2/WebAuthn, Conditional Access, SIEM/UEBA, EDR e SOAR |
-
-## EstratÃ©gia arquitetural
-
-- MFA resistente a phishing
-- PAM para contas privilegiadas
-- Conditional Access
-- RevisÃµes periÃ³dicas de acesso
-- IGA e segregaÃ§Ã£o de funÃ§Ãµes
-- EDR/XDR
-- SIEM para correlaÃ§Ã£o
-- SOAR para resposta automÃ¡tica
-- ZTNA e Device Trust
-- SegmentaÃ§Ã£o de rede
-- Backups imutÃ¡veis
-
-## Como um arquiteto pensa
-
-O arquiteto nÃ£o trata apenas a credencial comprometida. Ele projeta controles em camadas para prevenir, detectar, limitar e responder ao ataque.
-
-## Resumo executivo
-
-O modelo mental do arquiteto conecta ativo, ameaÃ§a, vulnerabilidade, risco, impacto e controle para justificar decisÃµes tÃ©cnicas e de negÃ³cio.
+**01.3 â€” Risco, AmeaÃ§a e Controle**
